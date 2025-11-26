@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #153677, #4e085f);
+    padding: 10px;
+}
+
+.todo-app {
+    width: 100%;
+    max-width: 540px;
+    background: #fff;
+    margin: 100px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+}
+
+.todo-app h2 {
+    color: #002765;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #edeef0;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    font-size: 14px;
+}
+
+button {
+    border: none;
+    outline: none;
+    padding: 12px 20px;
+    background: #ff5945;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 40px;
+    flex-shrink: 0;
+}
+
+ul li {
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+
+ul li::before {
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url(images/unchecked.png);
+    background-size: cover;
+    background-position: center;
+    top: 12px;
+    left: 8px;
+}
+
+ul li.checked {
+    color: #555;
+    text-decoration: line-through;
+}
+
+ul li.checked::before {
+    background-image: url(images/checked.png);
+}
+
+ul li span{
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+}
+ul li span:hover{
+    background: #edeef0;
+}
+
+/* 📱 Small Mobiles (up to 360px) */
+@media (max-width: 360px) {
+    .todo-app {
+        margin: 50px auto 20px;
+        padding: 20px 15px 50px;
+    }
+
+    .row {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    input {
+        width: 100%;
+        font-size: 12px;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        font-size: 14px;
+    }
+}
+
+/* 📱 Medium Mobiles (361px - 480px) */
+@media (max-width: 480px) {
+    .row {
+        flex-direction: column;
+        /* input upar, button neeche */
+        gap: 10px;
+        padding: 10px;
+    }
+
+    input {
+        width: 100%;
+    }
+
+    .todo-app {
+        margin: 60px auto 20px;
+        padding: 25px 20px 60px;
+    }
+
+    button {
+        width: 100%;
+        /* full width button */
+        padding: 12px;
+        font-size: 14px;
+    }
+}
+
+/* 📱 Large Mobiles / Small Tablets (481px - 768px) */
+@media (max-width: 768px) {
+    .todo-app {
+        max-width: 90%;
+        margin: 80px auto 20px;
+    }
+
+    button {
+        padding: 14px 25px;
+    }
+}
+
+/* 💻 Laptops (769px - 1024px) */
+@media (max-width: 1024px) {
+    .todo-app {
+        max-width: 70%;
+    }
+}
+
+/* 🖥️ Large Screens / Monitors (1025px - 1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .todo-app {
+        max-width: 600px;
+    }
+}
+
+/* 🖥️ Extra Large Monitors (1441px+) */
+@media (min-width: 1441px) {
+    .todo-app {
+        max-width: 700px;
+    }
+
+    button {
+        padding: 18px 60px;
+        font-size: 18px;
+    }
+}
