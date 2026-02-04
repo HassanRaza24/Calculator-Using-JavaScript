@@ -1,2 +1,2 @@
 # Calculator-Using-JavaScript
-today i make calculator using js
+today i make calculator using js with different method
